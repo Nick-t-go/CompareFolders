@@ -1,0 +1,7 @@
+C:\Users\ntoscano\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\ntoscano\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\FolderCompare.Properties.Resources.resources
+C:\Users\ntoscano\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\ntoscano\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\FolderCompare.exe
+C:\Users\ntoscano\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\FolderCompare.pdb
+C:\Users\ntoscano\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\FolderCompare.exe
+C:\Users\ntoscano\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\FolderCompare.pdb

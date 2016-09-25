@@ -1,0 +1,7 @@
+H:\AppDev\Visual Studio 2010\CompareFolders\CompareFolders\bin\Release\CompareFolders.exe
+H:\AppDev\Visual Studio 2010\CompareFolders\CompareFolders\bin\Release\CompareFolders.pdb
+H:\AppDev\Visual Studio 2010\CompareFolders\CompareFolders\obj\x86\Release\CompareFolders.Form1.resources
+H:\AppDev\Visual Studio 2010\CompareFolders\CompareFolders\obj\x86\Release\FolderCompare.Properties.Resources.resources
+H:\AppDev\Visual Studio 2010\CompareFolders\CompareFolders\obj\x86\Release\CompareFolders.csproj.GenerateResource.Cache
+H:\AppDev\Visual Studio 2010\CompareFolders\CompareFolders\obj\x86\Release\CompareFolders.exe
+H:\AppDev\Visual Studio 2010\CompareFolders\CompareFolders\obj\x86\Release\CompareFolders.pdb
