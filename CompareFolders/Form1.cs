@@ -18,7 +18,7 @@ namespace CompareFolders
         private string[] files2;
         private List<string> filesList1 = new List<string>();
         private List<string> filesList2 = new List<string>();
-
+        private FolderBrowserDialog folderDialog = new FolderBrowserDialog();
         
 
         public Form1()
@@ -36,17 +36,20 @@ namespace CompareFolders
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var folderDialog = new FolderBrowserDialog();
             folderDialog.ShowDialog();
+            explore1.Enabled = true;
 
-            if (folderDialog.SelectedPath.Length > 0)
+            if (folderDialog.SelectedPath.Length > 0 && deepSearch.Checked == false)
             {
-                //
-                // The user selected a folder and pressed the OK button.
-                // A message pops up and identifies the number of files found within that folder.
-                //
                 files1 = Directory.GetFiles(folderDialog.SelectedPath);
-                MessageBox.Show("Files found: " + files1.Length.ToString(), "Message");
+                label3.Text = files1.Length.ToString() + " File(s) Found in Folder 1";
+                textBox1.Text = folderDialog.SelectedPath;
+                button3.Enabled = textBox1.Text.Length > 0 && textBox2.Text.Length > 0;
+            }
+            else if (folderDialog.SelectedPath.Length > 0 && deepSearch.Checked == true)
+            {
+                files1 = Directory.GetFiles(folderDialog.SelectedPath, "*", SearchOption.AllDirectories);
+                label3.Text = files1.Length.ToString() + " File(s) Found in Folder 1";
                 textBox1.Text = folderDialog.SelectedPath;
                 button3.Enabled = textBox1.Text.Length > 0 && textBox2.Text.Length > 0;
             }
@@ -56,15 +59,20 @@ namespace CompareFolders
         {
             var folderDialog = new FolderBrowserDialog();
             folderDialog.ShowDialog();
+            explore2.Enabled = true;
 
-            if (folderDialog.SelectedPath.Length > 0)
+            if (folderDialog.SelectedPath.Length > 0 && deepSearch.Checked == false)
             {
-                //
-                // The user selected a folder and pressed the OK button.
-                // A message pops up and identifies the number of files found within that folder.
-                //
+
                 files2 = Directory.GetFiles(folderDialog.SelectedPath);
-                MessageBox.Show("Files found: " + files2.Length.ToString(), "Message");
+                label4.Text = files2.Length.ToString() + " File(s) Found in Folder 2";
+                textBox2.Text = folderDialog.SelectedPath;
+                button3.Enabled = textBox1.Text.Length > 0 && textBox2.Text.Length > 0;
+            }
+            else if (folderDialog.SelectedPath.Length > 0 && deepSearch.Checked == true)
+            {
+                files2 = Directory.GetFiles(folderDialog.SelectedPath,  "*", SearchOption.AllDirectories);
+                label4.Text = files2.Length.ToString() + " File(s) Found in Folder 2";
                 textBox2.Text = folderDialog.SelectedPath;
                 button3.Enabled = textBox1.Text.Length > 0 && textBox2.Text.Length > 0;
             }
@@ -74,8 +82,11 @@ namespace CompareFolders
 
         private void button3_Click(object sender, EventArgs e)
         {
+            var folderDialog = new FolderBrowserDialog();
             listBox1.Items.Clear();
             listBox2.Items.Clear();
+            filesList1 = new List<string>();
+            filesList2 = new List<string>();
 
             foreach (string file in files1)
             {
@@ -120,6 +131,58 @@ namespace CompareFolders
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deepSearch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (deepSearch.Checked == true)
+            {
+                deepSearch.Text = "Deep Search Enabled";
+                deepSearch.ForeColor = Color.Green;
+                if (textBox1.Text.Length > 0)
+                {
+                    files1 = Directory.GetFiles(textBox1.Text, "*", SearchOption.AllDirectories);
+                    label3.Text = files1.Length.ToString() + " File(s) Found in Folder 1";
+                }
+                if (textBox2.Text.Length > 0)
+                {
+                    files2 = Directory.GetFiles(textBox2.Text, "*", SearchOption.AllDirectories);
+                    label4.Text = files2.Length.ToString() + " File(s) Found in Folder 2";
+                    button3.Enabled = textBox1.Text.Length > 0 && textBox2.Text.Length > 0;
+                }
+            }
+               
+            else if (deepSearch.Checked == false)
+            {
+                deepSearch.Text = "Deep Search Disabled";
+                deepSearch.ForeColor = Color.Red;
+                if (textBox1.Text.Length > 0)
+                {
+                    files1 = Directory.GetFiles(textBox1.Text);
+                    label3.Text = files1.Length.ToString() + " File(s) Found in Folder 1";
+                }
+                if (textBox2.Text.Length > 0)
+                {
+                    files2 = Directory.GetFiles(textBox2.Text);
+                    label4.Text = files2.Length.ToString() + " File(s) Found in Folder 2";
+                    button3.Enabled = textBox1.Text.Length > 0 && textBox2.Text.Length > 0;
+                }
+            }
+        }
+
+        private void explore1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(textBox1.Text);
+        }
+
+        private void explore2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(textBox2.Text);
         }
     }
 }

@@ -43,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -59,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -144,15 +160,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CompareFoldersSetup"
-        "ProductCode" = "8:{94850C1E-BCB6-436A-8544-2C51EE29F978}"
-        "PackageCode" = "8:{723F00B6-6EE6-497A-A5AF-20379FBFB107}"
+        "ProductCode" = "8:{DA998D19-B363-4E76-A91C-D67163DD0850}"
+        "PackageCode" = "8:{BE8A33D3-8175-48D6-A05C-618BA9D2226E}"
         "UpgradeCode" = "8:{BBB28D7E-5167-4447-BFD6-ED43ED62874F}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:Microsoft"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -666,7 +682,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_F550C2C0225D412F83A0B0DEFC897942"
             {
-            "SourcePath" = "8:..\\CompareFolders\\obj\\x86\\Debug\\CompareFolders.exe"
+            "SourcePath" = "8:..\\CompareFolders\\obj\\x86\\Release\\CompareFolders.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7CA1124F2F3B4CDA9752726C40BD9C01"
